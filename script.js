@@ -1,24 +1,24 @@
+let btn = document.querySelector('.btn').addEventListener("click", getPost)
 function getPost() {
     method: 'GET'
     fetch('https://opensky-network.org/api/states/all')
     .then(res => res.json())
     .then(data => {
         let infos = data.states
-        let output = `<h2 class= text-center >Flight Information</h2>`;
+        let output = `<h2 class = "jumbotron display-4 text-center" >Flight Information</h2>`;
         infos.forEach((info, index) => {
             if(index <= 20){
-                // console.log(info)
-                // console.log(info[0])
-                // console.log(info[1])
-                // console.log(info[2])
-
                 output +=`
-                <div class= card m-4 style="display: flex; margin-bottom:20px">
+                <div class= "card m-4" style="display: flex">
+                    <h4 class="pb-2 pl-2 card card-header">Country: ${info[2]}</h4>
                     <div class= card card-body>
-                        <h6>Country: ${info[2]}</h6>
-                        <h6>Flight Number: ${info[1]}</h6>
-                        <h6>Take off Time: ${info[3]}</h6>
-                        <h6>Landing Time: ${info[4]}</h6>
+                        <h6 class="pl-2 pb-2 pt-2">Code: ${info[0]}</h6>
+                        <h6 class="pb-2 pl-2">Flight Number: ${info[1]}</h6>
+                        <h6 class="pb-2 pl-2">Take off Time: ${info[3]}</h6>
+                        <h6 class="pb-2 pl-2">Take off Delay: ${info[4]}</h6>
+                        <h6 class="pb-2 pl-2">Latitude: ${info[5]}</h6>
+                        <h6 class="pb-2 pl-2">Longitude: ${info[7]}</h6>
+                        <h6 class="pb-2 pl-2">Return: ${info[8]}</h6>
                     </div>
                 </div>
                 `
@@ -29,7 +29,7 @@ function getPost() {
 
     })
 }
-getPost();
+
 
 
 

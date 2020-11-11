@@ -86,8 +86,8 @@ ul li a{
     color: red;
     cursor: pointer;
     z-index: 3;
-    position: fixed;
-    top: 20px;
+    position: relative;
+    top: -200px;
     right: 50px;
 }
 
@@ -99,11 +99,13 @@ ul li a{
     height: 600px;
     object-fit: contain;
     background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.btn {
+    margin-top: 23rem;
+}
 
-}
-.files{
-    margin-left: 20px;
-}
 /***************** media query *****************/
 @media(max-width: 800px){
     .nav_item {
