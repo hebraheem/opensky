@@ -51,12 +51,13 @@ close.addEventListener("click", closeClicked);
 function barsClicked() {
     nav.style.display ="none"
     side_nav.style.display ="block"
-    
+    document.querySelector('.banner').style.display ="none"
 }
 
 function closeClicked() {
     nav.style.display ="flex"
     side_nav.style.display ="none"
+    document.querySelector('.banner').style.display ="block"
  }
 
 
