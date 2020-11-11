@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+/************************ nav bar ************************/
 .nav{
     width: 100%;
     height: 70px;
@@ -40,6 +40,7 @@ ul li a{
     right: 20px;
     top: 20px;
     cursor: pointer;
+    display: none;
 }
 .bar1, .bar2, .bar3 {
     width: 30px;
@@ -58,14 +59,17 @@ ul li a{
     color: #FF0000;
     text-shadow: 2px 2px 8px #111;
 }
-/* side nav */
+/******************** side nav ********************/
+.side_nav {
+    transition: width .5s, height .5s; 
+    display: none;
+}
 .side_item {
     width: 100%;
-    height: 0px;
     height: 100vh;
     justify-content: center;
     text-align: center;
-    /* display: none; */
+    transition: .5s;
 }
 .side{
     margin-top: 30vh;
@@ -77,20 +81,35 @@ ul li a{
     font-size: 2.5rem;
     transition: all .5s;
 }
-
-
-/* banner section */
-.banner {
-    background: url('./images/plane.png');
-    width: 100%;
-    height: 500px;
-    object-fit: contain;
-
+.cancel {
+    font-size: 3rem;
+    color: red;
+    cursor: pointer;
+    z-index: 3;
+    position: fixed;
+    top: 20px;
+    right: 50px;
 }
 
 
+/****************** banner section ******************/
+.banner {
+    background: url('./images/plane.png');
+    width: 100%;
+    height: 600px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+
+}
+.files{
+    margin-left: 20px;
+}
+/***************** media query *****************/
 @media(max-width: 800px){
     .nav_item {
         display: none;
+    }
+    .bars{
+        display: block;
     }
 }
