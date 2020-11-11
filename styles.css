@@ -61,7 +61,7 @@ ul li a{
 }
 /******************** side nav ********************/
 .side_nav {
-    transition: width .5s, height .5s; 
+    transition: all 1s; 
     display: none;
 }
 .side_item {
@@ -69,7 +69,7 @@ ul li a{
     height: 100vh;
     justify-content: center;
     text-align: center;
-    transition: .5s;
+    transition: all 1s;
 }
 .side{
     margin-top: 30vh;
@@ -104,6 +104,7 @@ ul li a{
 }
 .btn {
     margin-top: 23rem;
+    transition: 1.5s;
 }
 
 /***************** media query *****************/
