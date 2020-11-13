@@ -8,10 +8,10 @@ function getPost() {
         let output = `<h2 class = "jumbotron display-4 text-center" >Flight Information</h2>`;
         infos.forEach((info, index) => {
             if(index <= 20){
-                output +=`
-                <div class= "card m-4" style="display: flex">
+             output +=`
+                <div class= "card m-4" style="width: 350px;">
                     <h4 class="pb-2 pl-2 card card-header">Country: ${info[2]}</h4>
-                    <div class= card card-body>
+                    <div class= "col-lg-3 card card-body">
                         <h6 class="pl-2 pb-2 pt-2">Code: ${info[0]}</h6>
                         <h6 class="pb-2 pl-2">Flight Number: ${info[1]}</h6>
                         <h6 class="pb-2 pl-2">Take off Time: ${info[3]}</h6>
@@ -29,7 +29,6 @@ function getPost() {
 
     })
 }
-
 
 
 
@@ -51,13 +50,13 @@ close.addEventListener("click", closeClicked);
 function barsClicked() {
     nav.style.display ="none"
     side_nav.style.display ="block"
-    document.querySelector('.banner').style.display ="none"
+    // document.querySelector('.banner').style.display ="none"
 }
 
 function closeClicked() {
     nav.style.display ="flex"
     side_nav.style.display ="none"
-    document.querySelector('.banner').style.display ="block"
+    // document.querySelector('.banner').style.display ="block"
  }
 
 
