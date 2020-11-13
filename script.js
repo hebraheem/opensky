@@ -5,11 +5,12 @@ function getPost() {
     .then(res => res.json())
     .then(data => {
         let infos = data.states
-        let output = `<h2 class = "jumbotron display-4 text-center" >Flight Information</h2>`;
+        let output=""
+        let headerText = `<h2 class = "jumbotron display-4 text-center" >Flight Information</h2>`;
         infos.forEach((info, index) => {
             if(index <= 20){
              output +=`
-                <div class= "card m-4" style="width: 350px;">
+                <div class= "card mb-4 m-auto" style="width: 350px">
                     <h4 class="pb-2 pl-2 card card-header">Country: ${info[2]}</h4>
                     <div class= "card card-body">
                         <h6 class="pl-2 pb-2 pt-2">Code: ${info[0]}</h6>
@@ -25,11 +26,10 @@ function getPost() {
             }
         });
         document.querySelector('.files').innerHTML = output
-
-
+        document.querySelector('.textfile').innerHTML = headerText
     })
 }
-
+getPost()
 
 
 let nav = document.querySelector(".nav")
@@ -50,14 +50,12 @@ close.addEventListener("click", closeClicked);
 function barsClicked() {
     nav.style.display ="none"
     side_nav.style.display ="block"
-    // document.querySelector('.banner').style.display ="none"
 }
 
 function closeClicked() {
     nav.style.display ="flex"
     side_nav.style.display ="none"
-    // document.querySelector('.banner').style.display ="block"
- }
+}
 
 
 
